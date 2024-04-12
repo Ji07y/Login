@@ -1,0 +1,39 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model ProyectCRUD.Models.Entities.Usuarios
+
+<h1>Editar Usuario</h1>
+
+@if (Model is null){
+    <p>No se encontro usuario con esa ID</p>
+}
+else
+{
+    <form method="post">
+        <div class="mt-3">
+            <label class: "form-Label">Id</label>
+            <input type="text" class="form-control" asp-for="Id" readonly />
+        </div>
+
+        <div class="mt-3">
+            <label class: "form-Label">Name</label>
+            <input type="text" class="form-control" asp-for="usuario" />
+        </div>
+
+
+        <div class="mt-3">
+            <label class:"form-label">Clave</label>
+            <input type="text" class="form-control" asp-for="clave" />
+        </div>
+
+        <div class="mt-3">
+            <button type="submit" class="btn-primary">Save</button>
+            <button type="submit" class="btn btn-danger ms-3"
+            asp-action="Delete" asp-controller="Usuarios">Delete</button>
+        </div>
+
+    </form>
+}
